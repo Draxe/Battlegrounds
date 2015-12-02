@@ -9,7 +9,7 @@ public class Unit : MonoBehaviour {
 	public int PLAYER;
 	public int MAX_HP;
 	private int hp;
-	public float STRENGTH;
+	public int STRENGTH;
 	public float VARIATION;
 	public int SPEED;
 	public int RANGE;
@@ -100,16 +100,16 @@ public class Unit : MonoBehaviour {
 	
 	public void attack (Unit enemy) {
 		state = State.WAIT;
-		enemy.defend(STRENGTH, VARIATION);
+		enemy.defend(STRENGTH);
 	}
 	
 	public void newTurn () {
 		state = State.MOVE;
 	}
 	
-	public void defend (float strength, float variation) {
-		int damage = NegativeBinomialDistribution.fromMeanAndStandardDeviation(strength-1, variation)+1;
-		hp -= damage;
+	public void defend (int strength) {
+		//int damage = NegativeBinomialDistribution.fromMeanAndStandardDeviation(strength-1, variation)+1;
+		hp -= strength;
 		if (hp <= 0) {
 			position.remove ("Unit");
 			grid.remove (this);
