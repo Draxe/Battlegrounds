@@ -51,17 +51,11 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -80,9 +74,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AllAssets\Scripts\AI.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\AStar.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\HexEntry.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\HexGrid.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\HexGridOriginal.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\HexPosition.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\Human.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\NegativeBinomialDistribution.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\Player.cs" />
+    <Compile Include="Assets\AllAssets\Scripts\Unit.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\AllAssets\readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
