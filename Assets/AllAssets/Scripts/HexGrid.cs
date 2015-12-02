@@ -174,6 +174,7 @@ public class HexGrid : MonoBehaviour {
 		((Unit) selection.getValue("Unit")).attack ((Unit) mouse.getValue("Unit"));
 		checkGameOver ();
 		unselect ();
+        endTurn();
 	}
 	
 	private void move () {
@@ -191,6 +192,7 @@ public class HexGrid : MonoBehaviour {
 				} else {
 					myUnit.Status = Unit.State.WAIT;
 					unselect ();
+                    endTurn();
 				}
 			}
 		} else {
