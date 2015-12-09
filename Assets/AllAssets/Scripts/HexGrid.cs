@@ -8,8 +8,11 @@ public class HexGrid : MonoBehaviour
     public GameObject marker;
     public GameObject unitsRoot;
     public GameObject obstacles;
+    // The 4 Different tiles
     public GameObject Bases;
-    public GameObject Terrain;
+    public GameObject Lava;
+    public GameObject Forest;
+    public GameObject Hospital;
     private List<Unit> units = new List<Unit>();        //I should make this thread safe.
                                                         //public GameObject[] players;
 
@@ -129,11 +132,23 @@ public class HexGrid : MonoBehaviour
             child.position = position.getPosition();
             position.flag("Base");
         }
-        foreach (Transform child in Terrain.transform)
+        foreach (Transform child in Forest.transform)
         {
             HexPosition position = new HexPosition(child.position);
             child.position = position.getPosition();
-            position.flag("Terrain");
+            position.flag("Forest");
+        }
+        foreach (Transform child in Lava.transform)
+        {
+            HexPosition position = new HexPosition(child.position);
+            child.position = position.getPosition();
+            position.flag("Lava");
+        }
+        foreach (Transform child in Hospital.transform)
+        {
+            HexPosition position = new HexPosition(child.position);
+            child.position = position.getPosition();
+            position.flag("Hospital");
         }
     }
 
@@ -413,11 +428,11 @@ public class HexGrid : MonoBehaviour
             style.alignment = TextAnchor.MiddleCenter;
             if (countdownR == 0)
             {
-                player = 0;
+                player = 1;
             }
             if (countdownB == 0)
             {
-                player = 1;
+                player = 0;
             }
             GUI.Box(new Rect(10, 10, Screen.width - 20, Screen.height - 20), "Player " + (player + 1) + " Wins!", style);
             return;

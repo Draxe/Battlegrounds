@@ -120,6 +120,10 @@ public class Unit : MonoBehaviour
     public void newTurn()
     {
         state = State.MOVE;
+        if ( this.position.containsKey("Lava") )
+        {
+            this.hp -= 2;
+        }
     }
 
     public void defend(int strength)
