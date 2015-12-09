@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player {
+public class Player
+{
 
-	void Move () {
-	
-	}
+    void Move()
+    {
+
+    }
 }
